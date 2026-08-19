@@ -1,0 +1,23 @@
+;URL Interface
+;Machine is SJL0VWRESELL_T
+;Encoding Type is utf-8
+RegLock=1
+registrar=eNom
+RRPCode=200
+RRPText=Command completed successfully
+Command=GETREGLOCK
+APIType=API.NET
+Language=eng
+ErrCount=0
+ResponseCount=0
+MinPeriod=1
+MaxPeriod=10
+Server=sjl0vwresell_t
+Site=eNom
+IsLockable=True
+IsRealTimeTLD=True
+TimeDifference=+8.00
+ExecTime=0.469
+Done=true
+TrackingKey=9eda41bc-cb30-4525-b25f-f3cb7b7f34ef
+RequestDateTime=2/4/2015 11:35:55 AM

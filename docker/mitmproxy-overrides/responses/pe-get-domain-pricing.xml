@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<interface-response>
+  <DisplayPriceIncrease>0</DisplayPriceIncrease>
+  <pricestructure>
+    <product>
+      <tld>com</tld>
+      <tldid>0</tldid>
+      <registerprice>8.95</registerprice>
+      <resellerpricereg>8.95</resellerpricereg>
+      <registerenabled>True</registerenabled>
+      <renewprice>8.95</renewprice>
+      <resellerpricerenew>8.95</resellerpricerenew>
+      <renewenabled>True</renewenabled>
+      <transferprice>8.95</transferprice>
+      <resellerpricetran>8.95</resellerpricetran>
+      <transferenabled>True</transferenabled>
+      <rgpprice>160</rgpprice>
+      <resellerpricergp>160</resellerpricergp>
+      <rgpenabled>True</rgpenabled>
+    </product>
+    <product>
+      <tld>net</tld>
+      <tldid>1</tldid>
+      <registerprice>8.95</registerprice>
+      <resellerpricereg>8.95</resellerpricereg>
+      <registerenabled>True</registerenabled>
+      <renewprice>8.95</renewprice>
+      <resellerpricerenew>8.95</resellerpricerenew>
+      <renewenabled>True</renewenabled>
+      <transferprice>8.95</transferprice>
+      <resellerpricetran>8.95</resellerpricetran>
+      <transferenabled>True</transferenabled>
+      <rgpprice>160</rgpprice>
+      <resellerpricergp>160</resellerpricergp>
+      <rgpenabled>True</rgpenabled>
+    </product>
+    <count>2</count>
+  </pricestructure>
+  <Command>PE_GETDOMAINPRICING</Command>
+  <APIType>API</APIType>
+  <Language>eng</Language>
+  <ErrCount>0</ErrCount>
+  <ResponseCount>0</ResponseCount>
+  <MinPeriod/>
+  <MaxPeriod>10</MaxPeriod>
+  <Server>SJL21WRESELLT01</Server>
+  <Site>eNom</Site>
+  <IsLockable/>
+  <IsRealTimeTLD/>
+  <TimeDifference>+0.00</TimeDifference>
+  <ExecTime>0.078</ExecTime>
+  <Done>true</Done>
+  <RequestDateTime>12/9/2011 3:40:47 AM</RequestDateTime>
+  <debug><![CDATA[]]></debug>
+</interface-response>

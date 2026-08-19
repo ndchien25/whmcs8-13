@@ -1,0 +1,18 @@
+;URL Interface
+;Machine is SJL0VWRESELL_T1
+;Encoding Type is utf-8
+Command=SETCUSTOMERDEFINEDDATA
+APIType=API
+Language=eng
+ErrCount=0
+ResponseCount=0
+MinPeriod=
+MaxPeriod=10
+Server=SJL0VWRESELL_T1
+Site=eNom
+IsLockable=
+IsRealTimeTLD=
+TimeDifference=+0.00
+ExecTime=0.078
+Done=true
+RequestDateTime=2/5/2015 2:41:14 PM

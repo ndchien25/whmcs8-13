@@ -1,0 +1,110 @@
+services:
+  whmcs:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: whmcs-813-app
+    restart: unless-stopped
+    ports:
+      - "8090:80"
+    volumes:
+      - ./modules:/var/www/html/modules
+      - ./templates:/var/www/html/templates
+      - ./includes:/var/www/html/includes
+      - ./lang:/var/www/html/lang
+      - whmcs813_templates_c:/var/www/html/templates_c
+      - whmcs813_attachments:/var/www/html/attachments
+      - whmcs813_downloads:/var/www/html/downloads
+      - whmcs813_mitmproxy_certs:/mitmproxy-certs:ro
+    environment:
+      APACHE_DOCUMENT_ROOT: /var/www/html
+      http_proxy: http://whmcs813-mitmproxy:8888
+      https_proxy: http://whmcs813-mitmproxy:8888
+      HTTP_PROXY: http://whmcs813-mitmproxy:8888
+      HTTPS_PROXY: http://whmcs813-mitmproxy:8888
+      no_proxy: db,localhost,127.0.0.1,whmcs813-db,whmcs813-mitmproxy
+      NO_PROXY: db,localhost,127.0.0.1,whmcs813-db,whmcs813-mitmproxy
+    depends_on:
+      db:
+        condition: service_healthy
+      mitmproxy:
+        condition: service_started
+    networks: [whmcs813-network]
+
+  db:
+    image: mysql:8.0
+    container_name: whmcs813-db
+    restart: unless-stopped
+    ports: ["3307:3306"]
+    environment:
+      MYSQL_ROOT_PASSWORD: whmcs_root_pass
+      MYSQL_DATABASE: whmcs
+      MYSQL_USER: whmcs
+      MYSQL_PASSWORD: whmcs_pass
+    volumes:
+      - whmcs813_db_data:/var/lib/mysql
+      - ./docker/mysql.cnf:/etc/mysql/conf.d/whmcs.cnf
+      - ./logs/mysql:/var/log/mysql
+    command: >-
+      --default-authentication-plugin=mysql_native_password
+      --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+      --general-log=ON --general-log-file=/var/log/mysql/general.log --log-output=FILE
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pwhmcs_root_pass"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      whmcs813-network:
+        aliases: [mysql]
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: whmcs813-phpmyadmin
+    restart: unless-stopped
+    ports: ["8091:80"]
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: whmcs_root_pass
+    depends_on:
+      db:
+        condition: service_healthy
+    networks: [whmcs813-network]
+
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: whmcs813-mailpit
+    restart: unless-stopped
+    ports: ["8026:8025", "1026:1025"]
+    environment:
+      MP_SMTP_AUTH_ACCEPT_ANY: 1
+      MP_SMTP_AUTH_ALLOW_INSECURE: 1
+    networks: [whmcs813-network]
+
+  mitmproxy:
+    image: mitmproxy/mitmproxy:latest
+    container_name: whmcs813-mitmproxy
+    restart: unless-stopped
+    command: >-
+      mitmdump --set block_global=false --listen-host 0.0.0.0 --listen-port 8888
+      --set ssl_insecure=true -s /scripts/mitmproxy-logger.py
+    ports: ["8083:8888"]
+    volumes:
+      - ./docker/mitmproxy-logger.py:/scripts/mitmproxy-logger.py:ro
+      - ./docker/mitmproxy-overrides:/etc/mitmproxy/enom-overrides:ro
+      - ./logs:/var/log/mitmproxy
+      - whmcs813_mitmproxy_certs:/home/mitmproxy/.mitmproxy
+    networks: [whmcs813-network]
+
+volumes:
+  whmcs813_db_data:
+  whmcs813_templates_c:
+  whmcs813_attachments:
+  whmcs813_downloads:
+  whmcs813_mitmproxy_certs:
+
+networks:
+  whmcs813-network:
+    driver: bridge

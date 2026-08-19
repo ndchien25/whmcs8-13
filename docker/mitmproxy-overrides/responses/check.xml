@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<interface-response>
+  <RRPCode>200</RRPCode>
+  <RRPText>Command completed successfully</RRPText>
+  <ErrCount>0</ErrCount>
+  <Done>true</Done>
+</interface-response>

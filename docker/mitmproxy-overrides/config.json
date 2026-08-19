@@ -1,0 +1,77 @@
+{
+  "hosts": [
+    "reseller.enom.com",
+    "resellertest.enom.com"
+  ],
+  "apis": {
+    "Check": {
+      "enabled": false,
+      "status_code": 200,
+      "headers": {
+        "content-type": "text/xml; charset=utf-8"
+      },
+      "body_file": "responses/check.xml"
+    },
+    "SETCUSTOMERDEFINEDDATA": {
+      "enabled": true,
+      "status_code": 200,
+      "headers": {
+        "content-type": "text/plain; charset=utf-8"
+      },
+      "line_endings": "crlf",
+      "body_file": "responses/set-customer-defined-data.txt"
+    },
+    "PE_GetDomainPricing": {
+      "enabled": true,
+      "status_code": 200,
+      "headers": {
+        "content-type": "text/xml; charset=utf-8"
+      },
+      "body_file": "responses/pe-get-domain-pricing.xml"
+    },
+    "GetDomainInfo": {
+      "enabled": true,
+      "status_code": 200,
+      "headers": {
+        "content-type": "text/plain; charset=utf-8"
+      },
+      "line_endings": "crlf",
+      "body_file": "responses/get-domain-info.txt",
+      "response_types": {
+        "xml": {
+          "headers": {
+            "content-type": "text/xml; charset=utf-8"
+          },
+          "body_file": "responses/get-domain-info.xml"
+        }
+      }
+    },
+    "GetDNS": {
+      "enabled": true,
+      "status_code": 200,
+      "headers": {
+        "content-type": "text/plain; charset=utf-8"
+      },
+      "line_endings": "crlf",
+      "body_file": "responses/get-dns.txt"
+    },
+    "GetContacts": {
+      "enabled": true,
+      "status_code": 200,
+      "headers": {
+        "content-type": "text/plain; charset=utf-8"
+      },
+      "line_endings": "crlf",
+      "body_file": "responses/get-contacts.txt"
+    },
+    "GetRegLock": {
+      "enabled": true,
+      "status_code": 200,
+      "headers": {
+        "content-type": "text/plain; charset=utf-8"
+      },
+      "line_endings": "crlf",
+      "body_file": "responses/get-reg-lock.txt"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+;URL Interface
+;Machine is SJL0VWRESELL_T
+;Encoding Type is utf-8
+DNS1=dns1.name-services.com
+DNS2=dns2.name-services.com
+DNS3=dns3.name-services.com
+DNS4=dns4.name-services.com
+DNS5=dns5.name-services.com
+NSCount=5
+UseDNS=default
+HostsNumLimit=15
+NameserverRegistrySynced=True
+RRPCodeGDNS=200
+RRPText=Command completed successfully
+Command=GETDNS
+APIType=API
+Language=eng
+ErrCount=0
+ResponseCount=0
+MinPeriod=1
+MaxPeriod=10
+Server=SJL0VWRESELL_T
+Site=eNom
+IsLockable=True
+IsRealTimeTLD=True
+TimeDifference=+08.00
+ExecTime=0.234
+Done=true
+RequestDateTime=2/3/2015 5:09:02 PM

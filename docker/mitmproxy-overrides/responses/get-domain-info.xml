@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<interface-response>
+  <GetDomainInfo>
+    <domainname sld="chiennd" tld="net" domainnameid="152809550">chiennd.net</domainname>
+    <multy-langSLD/>
+    <status>
+      <expiration>4/1/2027 7:34:00 PM</expiration>
+      <deletebydate>4/1/2017 7:34:00 PM</deletebydate>
+      <deletetype/>
+      <restorable>False</restorable>
+      <renewbeforeexpiration/>
+      <registrar>eNom, Inc.</registrar>
+      <registrationstatus>Registered</registrationstatus>
+      <purchase-status>Paid</purchase-status>
+      <belongs-to party-id="{39AE68C0-D019-4690-9999-FD632BC1AFAA}">enomtest_reseller</belongs-to>
+      <escrowhold/>
+      <escrowliftdate/>
+      <auctionhold>False</auctionhold>
+      <auctionliftdate/>
+    </status>
+    <ParkingEnabled>False</ParkingEnabled>
+    <services>
+      <entry name="dnsserver">
+        <enomDNS value="YES" isDotName="NO"/>
+        <service changable="1">1006</service>
+        <configuration changable="0" type="dns">
+          <dns>dns1.name-services.com</dns>
+          <dns>dns2.name-services.com</dns>
+          <dns>dns3.name-services.com</dns>
+          <dns>dns4.name-services.com</dns>
+          <dns>dns5.name-services.com</dns>
+        </configuration>
+      </entry>
+      <entry name="dnssettings">
+        <service changable="0">1021</service>
+        <configuration changable="1" type="host">
+          <host>
+            <name><![CDATA[*]]></name>
+            <type><![CDATA[A]]></type>
+            <address><![CDATA[10.7.37.52]]></address>
+            <mxpref><![CDATA[10]]></mxpref>
+            <iseditable><![CDATA[1]]></iseditable>
+          </host>
+          <host>
+            <name><![CDATA[@]]></name>
+            <type><![CDATA[A]]></type>
+            <address><![CDATA[10.7.37.52]]></address>
+            <mxpref><![CDATA[10]]></mxpref>
+            <iseditable><![CDATA[1]]></iseditable>
+          </host>
+        </configuration>
+      </entry>
+      <entry name="wsb">
+        <service changable="1">1063</service>
+        <configuration changable="1" type="wsb">
+          <wsb>LWSC442x5665</wsb>
+          <siteid>1826</siteid>
+          <prodtype>86</prodtype>
+          <nextbilldate>Nov 11 2011 12:00AM</nextbilldate>
+        </configuration>
+      </entry>
+      <entry name="emailset">
+        <service changable="1">1048</service>
+      </entry>
+      <entry name="wpps">
+        <service changable="1">1120</service>
+        <configuration changable="1" type="id protect">
+          <wpps>
+            <cloakedemail><![CDATA[hgvxbfntk@whoisprivacyprotect.com]]></cloakedemail>
+            <forward-to><![CDATA[servicesqa@rightside.co]]></forward-to>
+            <expiredate>Apr 01, 2013</expiredate>
+            <autorenew>No</autorenew>
+          </wpps>
+        </configuration>
+      </entry>
+      <entry name="wbl">
+        <wbl>
+          <statusid><![CDATA[0]]></statusid>
+          <statusdescr><![CDATA[Available]]></statusdescr>
+        </wbl>
+      </entry>
+      <entry name="mobilizer">
+        <service changable="0">1117</service>
+        <mobilizer/>
+      </entry>
+      <entry name="parking">
+        <service changable="1">1030</service>
+      </entry>
+      <entry name="messaging">
+        <service changable="1">1087</service>
+      </entry>
+      <entry name="map">
+        <service changable="1">1108</service>
+      </entry>
+      <entry name="raasettings">
+        <service changable="0"/>
+        <raasetting>
+          <verificationstatus><![CDATA[Suspended]]></verificationstatus>
+          <domainsuspended><![CDATA[1]]></domainsuspended>
+          <suspensiondate><![CDATA[2016-05-23T08:50:21.673]]></suspensiondate>
+          <isqueuedchange><![CDATA[0]]></isqueuedchange>
+          <statusexpdate><![CDATA[2016-05-21T13:46:08.617]]></statusexpdate>
+        </raasetting>
+      </entry>
+      <entry name="irtpsettings">
+        <irtpsetting>
+          <optout>False</optout>
+          <transferlock>True</transferlock>
+          <transferlockexpdate
+    daysremaining="54"
+    utc="2026-09-26T00:00:00.000Z"
+    epoch="1789862400">9/26/2026 7:00 AM</transferlockexpdate>
+        </irtpsetting>
+      </entry>
+      <entry name="portalsettings">
+        <service changable="1"/>
+      </entry>
+      <entry name="whoispublicity">
+        <service changable="1"/>
+        <whoispublicity>
+          <vasitemid>1017648</vasitemid>
+          <enabled>False</enabled>
+        </whoispublicity>
+      </entry>
+    </services>
+  </GetDomainInfo>
+  <Command>GETDOMAININFO</Command>
+  <APIType>API</APIType>
+  <Language>eng</Language>
+  <ErrCount>0</ErrCount>
+  <ResponseCount>0</ResponseCount>
+  <MinPeriod>1</MinPeriod>
+  <MaxPeriod>10</MaxPeriod>
+  <Server>RESELLERTEST</Server>
+  <Site>eNom</Site>
+  <IsLockable>True</IsLockable>
+  <IsRealTimeTLD>True</IsRealTimeTLD>
+  <TimeDifference>+08.00</TimeDifference>
+  <ExecTime>0.000</ExecTime>
+  <Done>true</Done>
+  <TrackingKey>b4c29783-15a9-4f02-b9ea-a7fcaf6a51c3</TrackingKey>
+  <RequestDateTime>10/19/2016 1:50:50 PM</RequestDateTime>
+  <debug><![CDATA[]]></debug>
+</interface-response>
