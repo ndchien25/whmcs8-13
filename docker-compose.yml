@@ -12,6 +12,7 @@ services:
       - ./templates:/var/www/html/templates
       - ./includes:/var/www/html/includes
       - ./lang:/var/www/html/lang
+      - ./install:/var/www/html/install
       - whmcs813_templates_c:/var/www/html/templates_c
       - whmcs813_attachments:/var/www/html/attachments
       - whmcs813_downloads:/var/www/html/downloads
