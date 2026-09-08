@@ -8,11 +8,8 @@ services:
     ports:
       - "8090:80"
     volumes:
-      - ./modules:/var/www/html/modules
-      - ./templates:/var/www/html/templates
-      - ./includes:/var/www/html/includes
-      - ./lang:/var/www/html/lang
-      - ./install:/var/www/html/install
+      - ./:/var/www/html
+      - /var/www/html/vendor
       - whmcs813_templates_c:/var/www/html/templates_c
       - whmcs813_attachments:/var/www/html/attachments
       - whmcs813_downloads:/var/www/html/downloads

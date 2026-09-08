@@ -99,6 +99,7 @@ function cloudcpartner_ConfigOptions()
 function cloudcpartner_CreateAccount(array $params)
 {
     try {
+        return 'failed';
     } catch (Exception $e) {
         // Record the error in WHMCS's module log.
         logModuleCall(
@@ -118,9 +119,9 @@ function cloudcpartner_CreateAccount(array $params)
 function cloudcpartner_SuspendAccount(array $params)
 {
     try {
-        $instanceid = cloudcpartner_GetInstanceID($params['pid'], $params['serviceid']);
-        $partner_api = new CloudConePartnerAPI($params['serverusername'], $params['serverpassword'], $params['serveraccesshash']);
-        $partner_api->computeSuspend($instanceid);
+        // $instanceid = cloudcpartner_GetInstanceID($params['pid'], $params['serviceid']);
+        // $partner_api = new CloudConePartnerAPI($params['serverusername'], $params['serverpassword'], $params['serveraccesshash']);
+        // $partner_api->computeSuspend($instanceid);
     } catch (Exception $e) {
         // Record the error in WHMCS's module log.
         logModuleCall(
@@ -140,9 +141,10 @@ function cloudcpartner_SuspendAccount(array $params)
 function cloudcpartner_UnsuspendAccount(array $params)
 {
     try {
-        $instanceid = cloudcpartner_GetInstanceID($params['pid'], $params['serviceid']);
-        $partner_api = new CloudConePartnerAPI($params['serverusername'], $params['serverpassword'], $params['serveraccesshash']);
-        $partner_api->computeUnsuspend($instanceid);
+        // return 'failed';
+        // $instanceid = cloudcpartner_GetInstanceID($params['pid'], $params['serviceid']);
+        // $partner_api = new CloudConePartnerAPI($params['serverusername'], $params['serverpassword'], $params['serveraccesshash']);
+        // $partner_api->computeUnsuspend($instanceid);
     } catch (Exception $e) {
         // Record the error in WHMCS's module log.
         logModuleCall(
@@ -184,15 +186,15 @@ function cloudcpartner_TerminateAccount(array $params)
 function cloudcpartner_ChangePackage(array $params)
 {
     try {
-        $instanceid = cloudcpartner_GetInstanceID($params['pid'], $params['serviceid']);
+        // $instanceid = cloudcpartner_GetInstanceID($params['pid'], $params['serviceid']);
 
-        $partner_api = new CloudConePartnerAPI($params['serverusername'], $params['serverpassword'], $params['serveraccesshash']);
-        $partner_api->computeResize(
-            $instanceid,
-            (int)$params['configoption2'], // cpu
-            (int)$params['configoption3'], // ram
-            (int)$params['configoption4'], // disk
-        );
+        // $partner_api = new CloudConePartnerAPI($params['serverusername'], $params['serverpassword'], $params['serveraccesshash']);
+        // $partner_api->computeResize(
+        //     $instanceid,
+        //     (int)$params['configoption2'], // cpu
+        //     (int)$params['configoption3'], // ram
+        //     (int)$params['configoption4'], // disk
+        // );
     } catch (Exception $e) {
         // Record the error in WHMCS's module log.
         logModuleCall(
